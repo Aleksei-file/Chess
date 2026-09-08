@@ -8,6 +8,9 @@
       "DOM.Iterable"
     ],
     "module": "ESNext",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
