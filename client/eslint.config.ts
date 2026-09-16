@@ -31,6 +31,7 @@ export default [
         sessionStorage: 'readonly',
         process: 'readonly',
         globalThis: 'readonly',
+        console: 'readonly',
       },
     },
     plugins: { '@typescript-eslint': tsPlugin, 'react-hooks': reactHooks },
@@ -68,6 +69,7 @@ export default [
         sessionStorage: 'readonly',
         process: 'readonly',
         globalThis: 'readonly',
+        console: 'readonly',
       },
     },
     rules: {

@@ -1,0 +1,10 @@
+.Icon {
+  color: var(--text-contrast);
+  border-radius: 0.75rem;
+  border: 4px solid var(--text-contrast);
+}
+.Icon:hover,
+.Icon:focus-visible {
+  color: var(--text-contrast-hover);
+  border-color: var(--text-contrast-hover);
+}
