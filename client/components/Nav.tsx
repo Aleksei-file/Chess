@@ -11,7 +11,7 @@ import MenuButton from '@/components/MenuButton';
 import SettingsButton from '@/components/SettingsButton';
 import { Button } from '@/components/ui/Button';
 import NavPopup from '@/components/NavPopup';
-import styles from '@/components/Nav.module.scss'
+import styles from '@/components/Nav.module.scss';
 
 export default function Nav(): JSX.Element {
   const t = useTranslations();
@@ -42,7 +42,7 @@ export default function Nav(): JSX.Element {
         {isGamePage ? (
           <Button title={t('nav.stop')} onClick={stopGame} />
         ) : (
-          <Button title={t('nav.start')} onClick={openStartGamePopup} />
+          <Button title={t('nav.start_game')} onClick={openStartGamePopup} />
         )}
       </div>
       <a href="/">

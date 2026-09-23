@@ -3,8 +3,9 @@
  */
 'use client';
 
-import type { JSX } from 'react';
+import { useMemo, type JSX } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { TiThMenu } from 'react-icons/ti';
 import HeaderIcon from '@/components/HeaderIcon';
 import { DropdownButton } from '@/components/ui/DropdownButton';
@@ -21,12 +22,6 @@ const menuItemIds: Record<string, string> = {
   about: 'about',
 };
 
-const items: IDropdownButtonItem<string>[] = [
-  { type: 'item', label: 'Start Game', id: menuItemIds.startGame },
-  { type: 'item', label: 'History', id: menuItemIds.history },
-  { type: 'item', label: 'About', id: menuItemIds.about },
-];
-
 const MenuIcon = HeaderIcon(TiThMenu);
 
 interface IMenuButtonProps {
@@ -36,7 +31,17 @@ interface IMenuButtonProps {
 export default function MenuButton({
   onStartGameSelect,
 }: IMenuButtonProps): JSX.Element {
+  const t = useTranslations();
   const router = useRouter();
+
+  const items: IDropdownButtonItem<string>[] = useMemo(
+    (): IDropdownButtonItem<string>[] => [
+      { type: 'item', label: t('menu.start'), id: menuItemIds.startGame },
+      { type: 'item', label: t('menu.history'), id: menuItemIds.history },
+      { type: 'item', label: t('menu.about'), id: menuItemIds.about },
+    ],
+    [t]
+  );
 
   const menuItemClick = (itemId: string): void => {
     switch (itemId) {

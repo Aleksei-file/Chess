@@ -4,8 +4,9 @@
  */
 'use client';
 
-import type { JSX } from 'react';
+import { useMemo, type JSX } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { Popup } from '@/components/ui/Popup';
 import { Button } from '@/components/ui/Button';
 
@@ -20,7 +21,12 @@ export default function NavPopup({
   onOpenChange,
   isGamePage,
 }: INavPopupProps): JSX.Element {
+  const t = useTranslations();
   const router = useRouter();
+  const title = useMemo(
+    (): string => (isGamePage ? t('nav.stop_game') : t('nav.start_game')),
+    [isGamePage, t]
+  );
 
   const confirmStartGame = (): void => {
     onOpenChange(false);
@@ -28,12 +34,8 @@ export default function NavPopup({
   };
 
   return (
-    <Popup
-      open={isOpen}
-      onOpenChange={onOpenChange}
-      title={isGamePage ? 'Stop Game' : 'Start Game'}
-    >
-      <Button onClick={confirmStartGame} title={'Start'} />
+    <Popup open={isOpen} onOpenChange={onOpenChange} title={title}>
+      <Button onClick={confirmStartGame} title={t('nav.start')} />
     </Popup>
   );
 }

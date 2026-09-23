@@ -6,11 +6,13 @@
         "label": "Basic navigation",
         "logo": "Chess",
         "stop": "Stop",
-        "start": "Start Game",
+        "stop_game": "Stop game",
+        "start": "Start",
+        "start_game": "Start game",
         "resign": "Resign"
     },
     "menu": {
-        "start": "Start Game",
+        "start": "Start game",
         "history": "History",
         "about": "About"
     },
@@ -18,6 +20,9 @@
         "language": "Language",
         "theme": "Theme",
         "profile": "Profile"
+    },
+    "about": {
+        "title": "About app"
     },
     "notFound": "404 - Page not found"
 }

@@ -6,11 +6,13 @@
         "label": "Navegação básica",
         "logo": "Xadrez",
         "stop": "Parar",
-        "start": "Iniciar Jogo",
+        "stop_game": "Parar jogo",
+        "start": "Iniciar",
+        "start_game": "Iniciar jogo",
         "resign": "Desistir"
     },
     "menu": {
-        "start": "Iniciar Jogo",
+        "start": "Iniciar jogo",
         "history": "Histórico",
         "about": "Sobre"
     },
@@ -18,6 +20,9 @@
         "language": "Idioma",
         "theme": "Tema",
         "profile": "Perfil"
+    },
+    "about": {
+        "title": "Sobre o aplicativo"
     },
     "notFound": "404 - Página não encontrada"
 }
