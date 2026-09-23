@@ -4,5 +4,5 @@
 import type { JSX } from 'react';
 
 export default function HistoryPage(): JSX.Element {
-  return <div></div>;
+  return <div>{'History page!'}</div>;
 }

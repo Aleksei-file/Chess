@@ -4,5 +4,5 @@
 import type { JSX } from 'react';
 
 export default function AboutPage(): JSX.Element {
-  return <div></div>;
+  return <div>{'About page!'}</div>;
 }
