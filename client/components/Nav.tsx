@@ -4,17 +4,23 @@
  */
 'use client';
 
-import { useState, type JSX } from 'react';
+import { useMemo, useState, type JSX } from 'react';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import MenuButton from '@/components/MenuButton';
 import SettingsButton from '@/components/SettingsButton';
 import { Button } from '@/components/ui/Button';
 import NavPopup from '@/components/NavPopup';
+import styles from '@/components/Nav.module.scss'
 
 export default function Nav(): JSX.Element {
+  const t = useTranslations();
   const pathname = usePathname();
   const [isStartGameOpen, setIsStartGameOpen] = useState(false);
-  const isGamePage = pathname.startsWith('/game/');
+  const isGamePage = useMemo(
+    (): boolean => pathname.startsWith('/game/'),
+    [pathname]
+  );
 
   const openStartGamePopup = (): void => setIsStartGameOpen(true);
 
@@ -28,22 +34,22 @@ export default function Nav(): JSX.Element {
 
   return (
     <nav
-      aria-label="{'Basic navigation'}"
+      aria-label={t('nav.label')}
       className="flex justify-between items-center"
     >
       <div className="flex items-center gap-2">
         <MenuButton onStartGameSelect={openStartGamePopup} />
         {isGamePage ? (
-          <Button title={'Stop'} onClick={stopGame} />
+          <Button title={t('nav.stop')} onClick={stopGame} />
         ) : (
-          <Button title={'Start Game'} onClick={openStartGamePopup} />
+          <Button title={t('nav.start')} onClick={openStartGamePopup} />
         )}
       </div>
-
-      <span>{'Chess'}</span>
-
+      <a href="/">
+        <span role="img" aria-label={t('nav.logo')} className={styles.Logo} />
+      </a>
       <div className="flex items-center gap-2">
-        {isGamePage && <Button title={'Resign'} onClick={resignGame} />}
+        {isGamePage && <Button title={t('nav.resign')} onClick={resignGame} />}
         <SettingsButton />
       </div>
       <NavPopup

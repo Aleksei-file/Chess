@@ -1,5 +1,23 @@
 {
     "main": {
         "welcome": "Welcome to the Chess App!"
-    }
+    },
+    "nav": {
+        "label": "Basic navigation",
+        "logo": "Chess",
+        "stop": "Stop",
+        "start": "Start Game",
+        "resign": "Resign"
+    },
+    "menu": {
+        "start": "Start Game",
+        "history": "History",
+        "about": "About"
+    },
+    "settings": {
+        "language": "Language",
+        "theme": "Theme",
+        "profile": "Profile"
+    },
+    "notFound": "404 - Page not found"
 }

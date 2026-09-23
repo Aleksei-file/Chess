@@ -2,7 +2,9 @@
  * 404 page
  */
 import type { JSX } from 'react';
+import { getTranslations } from 'next-intl/server';
 
-export default function NotFoundPage(): JSX.Element {
-  return <div>{'404 - Page Not Found'}</div>;
+export default async function NotFoundPage(): Promise<JSX.Element> {
+  const t = await getTranslations();
+  return <div>{t('notFound')}</div>;
 }

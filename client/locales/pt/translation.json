@@ -1,5 +1,23 @@
 {
     "main": {
         "welcome": "Bem-vindo ao aplicativo de Chess App!"
-    }
+    },
+    "nav": {
+        "label": "Navegação básica",
+        "logo": "Xadrez",
+        "stop": "Parar",
+        "start": "Iniciar Jogo",
+        "resign": "Desistir"
+    },
+    "menu": {
+        "start": "Iniciar Jogo",
+        "history": "Histórico",
+        "about": "Sobre"
+    },
+    "settings": {
+        "language": "Idioma",
+        "theme": "Tema",
+        "profile": "Perfil"
+    },
+    "notFound": "404 - Página não encontrada"
 }
