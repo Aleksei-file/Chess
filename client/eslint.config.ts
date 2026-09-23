@@ -37,6 +37,7 @@ export default [
     plugins: { '@typescript-eslint': tsPlugin, 'react-hooks': reactHooks },
     rules: {
       ...js.configs.recommended.rules,
+      'no-undef': 'off',
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',

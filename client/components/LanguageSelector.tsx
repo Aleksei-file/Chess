@@ -3,12 +3,17 @@
  */
 'use client';
 
-import type { JSX } from 'react';
+import { useTransition, useMemo, type ReactNode, type JSX } from 'react';
+import { useRouter } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import ReactCountryFlag from 'react-country-flag';
+import { TiArrowSortedDown } from 'react-icons/ti';
 import { DropdownButton } from '@/components/ui/DropdownButton';
 import type { IDropdownButtonItem } from '@/components/ui/Interfaces';
+import { setUserLocale } from '@/i18n/actions';
+import type { Locale } from '@/i18n/locales';
 
-type Language = 'en' | 'pt' | 'ru';
+type Language = Locale;
 
 const flagCodes: Record<Language, string> = {
   en: 'US',
@@ -20,32 +25,51 @@ const flagComponent = (countryCode: string): JSX.Element => (
   <ReactCountryFlag countryCode={countryCode} svg />
 );
 
-const items: IDropdownButtonItem[] = [
+const items: IDropdownButtonItem<Language>[] = [
   {
     type: 'item',
     label: 'English',
-    id: flagCodes.en,
+    id: 'en',
     component: flagComponent(flagCodes.en),
   },
   {
     type: 'item',
-    label: 'Portuguese',
-    id: flagCodes.pt,
+    label: 'Português',
+    id: 'pt',
     component: flagComponent(flagCodes.pt),
   },
   {
     type: 'item',
-    label: 'Russian',
-    id: flagCodes.ru,
+    label: 'Русский',
+    id: 'ru',
     component: flagComponent(flagCodes.ru),
   },
 ];
 
+const selectorIcons = (flagCode: Language): ReactNode => (
+  <>
+    {flagComponent(flagCodes[flagCode])}
+    <TiArrowSortedDown />
+  </>
+);
+
 export default function LanguageSelector(): JSX.Element {
-  const menuItemClick = (itemId: string): void => {
-    console.log(`Clicked item with ID: ${itemId}`);
+  const currentLanguage = useLocale() as Language;
+  const router = useRouter();
+  const [, startTransition] = useTransition();
+
+  const menuItemClick = (itemId: Language): void => {
+    startTransition(async (): Promise<void> => {
+      await setUserLocale(itemId);
+      router.refresh();
+    });
   };
-  const buttonContent = flagComponent(flagCodes.en);
+
+  const buttonContent = useMemo(
+    (): ReactNode => selectorIcons(currentLanguage),
+    [currentLanguage]
+  );
+
   return (
     <DropdownButton
       buttonContent={buttonContent}

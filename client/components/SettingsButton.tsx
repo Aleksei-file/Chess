@@ -10,12 +10,13 @@ import LanguageSelector from '@/components/LanguageSelector';
 import HeaderIcon from '@/components/HeaderIcon';
 import type { IDropdownButtonItem } from '@/components/ui/Interfaces';
 
-const items: IDropdownButtonItem[] = [
+const items: IDropdownButtonItem<string>[] = [
   { type: 'item', label: 'Theme', id: 'theme' },
   {
     type: 'item',
     label: 'Language',
     id: 'language',
+    isMutedComponent: true,
     component: <LanguageSelector />,
   },
   { type: 'separator', label: '', id: 'separator1' },

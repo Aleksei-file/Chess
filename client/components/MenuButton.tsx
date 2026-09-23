@@ -21,7 +21,7 @@ const menuItemIds: Record<string, string> = {
   about: 'about',
 };
 
-const items: IDropdownButtonItem[] = [
+const items: IDropdownButtonItem<string>[] = [
   { type: 'item', label: 'Start Game', id: menuItemIds.startGame },
   { type: 'item', label: 'History', id: menuItemIds.history },
   { type: 'item', label: 'About', id: menuItemIds.about },

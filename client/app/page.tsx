@@ -2,7 +2,9 @@
  * Defines the landing page for the chess application.
  */
 import type { JSX } from 'react';
+import { getTranslations } from 'next-intl/server';
 
-export default function Home(): JSX.Element {
-  return <div>{'Hello, welcome to the Chess App!'}</div>;
+export default async function Home(): Promise<JSX.Element> {
+  const t = await getTranslations();
+  return <div>{t('main.welcome')}</div>;
 }

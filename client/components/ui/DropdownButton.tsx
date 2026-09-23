@@ -2,36 +2,35 @@
  * Provides a reusable dropdown menu component for app actions and settings.
  */
 'use client';
-
-import type { JSX, ReactNode } from 'react';
+import type { JSX, ReactNode, MouseEvent } from 'react';
 import { Menu } from '@base-ui/react/menu';
 import styles from './DropdownButton.module.scss';
 
-interface IDropdownButtonItem {
+interface IDropdownButtonItem<T extends string> {
   type: 'item' | 'separator';
   label: string;
-  id: string;
+  id: T;
   component?: JSX.Element;
+  isMutedComponent?: boolean;
 }
-
-interface IDropdownButtonProps {
+interface IDropdownButtonProps<T extends string> {
   buttonContent: ReactNode;
-  items: IDropdownButtonItem[];
-  onItemClick?: (itemId: string) => void;
+  items: IDropdownButtonItem<T>[];
+  onItemClick?: (itemId: T) => void;
 }
 
-function DropdownButton({
+function DropdownButton<T extends string>({
   buttonContent,
   items,
   onItemClick,
-}: IDropdownButtonProps): JSX.Element {
+}: IDropdownButtonProps<T>): JSX.Element {
   return (
     <Menu.Root>
       <Menu.Trigger className={styles.Button}>{buttonContent}</Menu.Trigger>
       <Menu.Portal>
         <Menu.Positioner className={styles.Positioner} align="start">
           <Menu.Popup className={styles.Popup}>
-            {items.map((item): JSX.Element =>
+            {items.map((item: IDropdownButtonItem<T>): JSX.Element =>
               item.type === 'separator' ? (
                 <Menu.Separator key={item.id} className={styles.Separator} />
               ) : (
@@ -44,7 +43,9 @@ function DropdownButton({
                   {item.component && (
                     <div
                       className="ml-4"
-                      onClick={(e): void => e.stopPropagation()}
+                      onClick={(e: MouseEvent<HTMLDivElement>): void => {
+                        item.isMutedComponent && e.stopPropagation();
+                      }}
                     >
                       {item.component}
                     </div>
