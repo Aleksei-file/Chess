@@ -1,0 +1,39 @@
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: 150ms ease;
+}
+.Positioner {
+  z-index: 20;
+}
+.Popup {
+  min-width: 10rem;
+  padding: 0.4rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 0.75rem;
+  background: var(--panel-background);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+}
+.Item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.45rem;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.Item:hover {
+  background: var(--panel-background-hover);
+}
+.Separator {
+  height: 1px;
+  margin: 0.35rem 0;
+  background: var(--text-primary);
+}

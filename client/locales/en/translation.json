@@ -1,0 +1,33 @@
+{
+    "main": {
+        "welcome": "Welcome to the Chess App!"
+    },
+    "nav": {
+        "label": "Basic navigation",
+        "logo": "Chess",
+        "stop": "Stop",
+        "stop_game": "Stop game",
+        "start": "Start",
+        "start_game": "Start game",
+        "resign": "Resign"
+    },
+    "menu": {
+        "start": "Start game",
+        "history": "History",
+        "about": "About"
+    },
+    "settings": {
+        "language": "Language",
+        "theme": "Theme",
+        "profile": "Profile"
+    },
+    "about": {
+        "title": "About app"
+    },
+    "themes": {
+        "light": "Light",
+        "dark": "Dark",
+        "sepia": "Sepia"
+    },
+    "notFound": "404 - Page not found"
+}

@@ -1,0 +1,11 @@
+.Button {
+  background: var(--text-contrast);
+  color: var(--text-primary);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background: var(--text-contrast-hover);
+}

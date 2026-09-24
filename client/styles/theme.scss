@@ -1,0 +1,42 @@
+:root {
+  --page-background-light: linear-gradient(125deg, #1e40af, #0ea5e9);
+  --text-primary-light: #1c2733;
+  --text-contrast-light: #d97706;
+  --page-background-dark: linear-gradient(125deg, #1a0f2e, #6d28d9);
+  --text-primary-dark: #e7e2f5;
+  --text-contrast-dark: #fbbf24;
+  --page-background-sepia: linear-gradient(125deg, #c9975a, #f0e2c8);
+  --text-primary-sepia: #3a2e22;
+  --text-contrast-sepia: #92400e;
+
+  --text-primary: var(--text-primary-light);
+  --text-secondary: #57697c;
+  --text-contrast: var(--text-contrast-light);
+  --text-contrast-hover: #f59e0b;
+  --page-background: var(--page-background-light);
+  --panel-background: #eef4fb;
+  --panel-background-hover: #dbe7f5;
+  --panel-border: #c2d4ea;
+}
+
+[data-theme='dark'] {
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: #a99fc4;
+  --text-contrast: var(--text-contrast-dark);
+  --text-contrast-hover: #fde68a;
+  --page-background: var(--page-background-dark);
+  --panel-background: #221934;
+  --panel-background-hover: #332648;
+  --panel-border: #493a63;
+}
+
+[data-theme='sepia'] {
+  --text-primary: var(--text-primary-sepia);
+  --text-secondary: #7d6952;
+  --text-contrast: var(--text-contrast-sepia);
+  --text-contrast-hover: #b45309;
+  --page-background: var(--page-background-sepia);
+  --panel-background: #f6eedc;
+  --panel-background-hover: #e9d6b1;
+  --panel-border: #cdac7c;
+}

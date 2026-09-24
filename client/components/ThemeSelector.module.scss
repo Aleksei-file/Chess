@@ -1,0 +1,24 @@
+.Icon {
+  border-radius: 0.25rem;
+  border: 1px solid;
+}
+.Icon-selected {
+  background: var(--page-background);
+  color: var(--text-primary);
+  border-color: var(--text-contrast);
+}
+.Icon-light {
+  background: var(--page-background-light);
+  color: var(--text-primary-light);
+  border-color: var(--text-contrast-light);
+}
+.Icon-dark {
+  background: var(--page-background-dark);
+  color: var(--text-primary-dark);
+  border-color: var(--text-contrast-dark);
+}
+.Icon-sepia {
+  background: var(--page-background-sepia);
+  color: var(--text-primary-sepia);
+  border-color: var(--text-contrast-sepia);
+}
