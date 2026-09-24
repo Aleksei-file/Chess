@@ -24,5 +24,10 @@
     "about": {
         "title": "Sobre o aplicativo"
     },
+    "themes": {
+        "light": "Claro",
+        "dark": "Escuro",
+        "sepia": "Sépia"
+    },
     "notFound": "404 - Página não encontrada"
 }

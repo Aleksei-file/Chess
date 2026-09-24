@@ -24,5 +24,10 @@
     "about": {
         "title": "About app"
     },
+    "themes": {
+        "light": "Light",
+        "dark": "Dark",
+        "sepia": "Sepia"
+    },
     "notFound": "404 - Page not found"
 }

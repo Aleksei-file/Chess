@@ -7,6 +7,7 @@ import { useMemo, type JSX } from 'react';
 import { useTranslations } from 'next-intl';
 import { TiCog } from 'react-icons/ti';
 import { DropdownButton } from '@/components/ui/DropdownButton';
+import ThemeSelector from '@/components/ThemeSelector';
 import LanguageSelector from '@/components/LanguageSelector';
 import HeaderIcon from '@/components/HeaderIcon';
 import type { IDropdownButtonItem } from '@/components/ui/Interfaces';
@@ -18,7 +19,13 @@ export default function ExampleMenu(): JSX.Element {
 
   const items: IDropdownButtonItem<string>[] = useMemo(
     (): IDropdownButtonItem<string>[] => [
-      { type: 'item', label: t('settings.theme'), id: 'theme' },
+      {
+        type: 'item',
+        label: t('settings.theme'),
+        id: 'theme',
+        isMutedComponent: true,
+        component: <ThemeSelector />,
+      },
       {
         type: 'item',
         label: t('settings.language'),

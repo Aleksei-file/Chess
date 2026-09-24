@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
+import { getTheme } from '@/themes/actions';
 import Nav from '@/components/Nav';
 import '@/styles/globals.css';
 
@@ -20,9 +21,10 @@ export default async function RootLayout({
 }): Promise<ReactNode> {
   const locale = await getLocale();
   const messages = await getMessages();
+  const theme = await getTheme();
 
   return (
-    <html lang={locale} className="h-screen">
+    <html lang={locale} data-theme={theme} className="h-screen">
       <body className="h-full p-2">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <header>
