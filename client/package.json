@@ -7,6 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "postinstall": "node scripts/copy-stockfish.mjs",
+    "predev": "node scripts/copy-stockfish.mjs",
+    "prebuild": "node scripts/copy-stockfish.mjs",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"*.{json,ts}\" \"app/**/*.{scss,ts,tsx,md}\" \"components/**/*.{scss,ts,tsx,md}\"",
     "typecheck": "tsc --noEmit"
