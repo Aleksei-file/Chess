@@ -12,4 +12,4 @@ export const defaultTheme: Theme = themes[0];
 export const themeCookieName = 'MAIN_THEME';
 
 export const isTheme = (value: string): value is Theme =>
-   (themes as readonly string[]).includes(value);
+  (themes as readonly string[]).includes(value);

@@ -2,10 +2,15 @@
  * Server actions for reading and persisting the user's theme choice via a
  * cookie, mirroring the locale cookie flow in i18n/actions.ts.
  */
-'use server'
+'use server';
 
-import { cookies } from 'next/headers'
-import { defaultTheme, themeCookieName, isTheme, type Theme } from './constants';
+import { cookies } from 'next/headers';
+import {
+  defaultTheme,
+  themeCookieName,
+  isTheme,
+  type Theme,
+} from './constants';
 
 export async function setTheme(theme: Theme): Promise<void> {
   const cookieStore = await cookies();

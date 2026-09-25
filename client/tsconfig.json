@@ -37,6 +37,9 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "components",
+    "themes",
+    "hooks",
+    "lib",
     "i18n"
   ],
   "exclude": ["node_modules"]

@@ -9,7 +9,12 @@ import { getRequestConfig } from 'next-intl/server';
 import en from '@/locales/en/translation.json';
 import pt from '@/locales/pt/translation.json';
 import ru from '@/locales/ru/translation.json';
-import { defaultLocale, isLocale, localeCookieName, type Locale } from './locales';
+import {
+  defaultLocale,
+  isLocale,
+  localeCookieName,
+  type Locale,
+} from './locales';
 
 const messagesByLocale: Record<Locale, typeof en> = { en, pt, ru };
 
