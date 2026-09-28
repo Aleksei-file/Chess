@@ -2,6 +2,7 @@ node_modules/
 .next/
 dist/
 build/
+client/public/stockfish/
 *.tsbuildinfo
 *.db
 *.sqlite

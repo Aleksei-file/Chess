@@ -6,7 +6,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 export default [
   // Ignore build output and dependencies
   {
-    ignores: ['.next/**', 'dist/**', 'node_modules/**'],
+    ignores: ['.next/**', 'dist/**', 'node_modules/**', 'public/stockfish/**'],
   },
   // TypeScript files: enable the TypeScript parser
   {

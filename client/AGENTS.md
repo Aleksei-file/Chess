@@ -17,20 +17,24 @@ Do not move backend persistence, Stockfish process management, or authoritative 
 
 ## Suggested client organization
 
+```
 client/
-  app/                  # Pages, layouts, and client-facing routes
+  app/                     # Pages, layouts, and client-facing routes
+    about/                 # About page
     game/
-      [gameId]/         # Game-page 
-    history/            # Game-history state and composition     
-  components/
-      chess/            # Chessboard and controls
-      ui/               # Reusable visual primitives
-      theme/            # Theme state and theme switcher        
+      [gameId]/            # Game page
+    history/               # Game-history page
+  components/              # Feature, layout, and reusable UI components
+    ui/                    # Reusable low-level UI primitives (Button, Popup, DropdownButton, Board)
+  hooks/                   # Reusable React hooks (e.g. useStockfish)
+  i18n/                    # next-intl locale routing and request configuration
   lib/
-    api/                # Centralized Axios client and API methods
-    websocket/          # Typed browser WebSocket client
-  hooks/                # Reusable React hooks
-  types/                # Client-facing contracts and view models
+    stockfish/             # Stockfish engine integration (UCI parsing, engine wrapper)
+  locales/                 # Translation JSON resources per locale (en, pt, ru)
+  scripts/                 # Build-time Node scripts (e.g. copying Stockfish assets into public/)
+  styles/                  # Global CSS and theme SCSS
+  themes/                  # Theme state, persistence actions, and constants
+```
 
 Adapt to the actual scaffold, but keep pages thin and move reusable behavior into feature, hook, component, or library modules.
 
@@ -92,13 +96,3 @@ Adapt to the actual scaffold, but keep pages thin and move reusable behavior int
 ## Frontend verification
 
 Before completing frontend work, run relevant linting, type checks, tests, and build commands. Also manually verify the changed UI at mobile and desktop widths, in each affected theme, and with keyboard navigation for changed controls.
-
-<!-- BEGIN:nextjs-agent-rules -->
-
-# This is NOT the Next.js you know
-
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
-
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
-
-<!-- END:nextjs-agent-rules -->
