@@ -24,6 +24,11 @@
   "about": {
     "title": "Sobre o aplicativo"
   },
+  "game": {
+    "thinking": "Adversário está pensando…",
+    "yourTurn": "Sua vez",
+    "gameOver": "Fim de jogo"
+  },
   "themes": {
     "light": "Claro",
     "dark": "Escuro",

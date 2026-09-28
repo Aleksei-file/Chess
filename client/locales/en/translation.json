@@ -24,6 +24,11 @@
   "about": {
     "title": "About app"
   },
+  "game": {
+    "thinking": "Opponent is thinking…",
+    "yourTurn": "Your turn",
+    "gameOver": "Game over"
+  },
   "themes": {
     "light": "Light",
     "dark": "Dark",
