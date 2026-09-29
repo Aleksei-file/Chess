@@ -1,28 +1,26 @@
 /**
  * Renders the app header navigation, including the start/stop game controls.
- * The game-start confirmation popup itself lives in NavPopup.
+ * The game-start confirmation popup is owned by StartGameProvider.
  */
 'use client';
 
-import { useMemo, useState, type JSX } from 'react';
+import { useMemo, type JSX } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import MenuButton from '@/components/MenuButton';
 import SettingsButton from '@/components/SettingsButton';
 import { Button } from '@/components/ui/Button';
-import NavPopup from '@/components/NavPopup';
+import StartGameButton from '@/components/startGame/StartGameButton';
 import styles from './Nav.module.scss';
 
 export default function Nav(): JSX.Element {
   const t = useTranslations();
   const pathname = usePathname();
-  const [isStartGameOpen, setIsStartGameOpen] = useState(false);
   const isGamePage = useMemo(
     (): boolean => pathname.startsWith('/game/'),
     [pathname]
   );
-
-  const openStartGamePopup = (): void => setIsStartGameOpen(true);
+  const isHomePage = pathname === '/';
 
   const stopGame = (): void => {
     // TODO: stop the game timer and navigate back to the home page.
@@ -38,28 +36,28 @@ export default function Nav(): JSX.Element {
       className="relative flex justify-between items-center"
     >
       <div className="flex items-center gap-2">
-        <MenuButton onStartGameSelect={openStartGamePopup} />
+        <MenuButton />
         {isGamePage ? (
           <Button title={t('nav.stop')} onClick={stopGame} />
         ) : (
-          <Button title={t('nav.start_game')} onClick={openStartGamePopup} />
+          <StartGameButton
+            title={t('startGame.start_game')}
+            className={styles.StartButton}
+          />
         )}
       </div>
-      <a
-        href="/"
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-      >
-        <span role="img" aria-label={t('nav.logo')} className={styles.Logo} />
-      </a>
+      {!isHomePage && (
+        <a
+          href="/"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          <span role="img" aria-label={t('nav.logo')} className={styles.Logo} />
+        </a>
+      )}
       <div className="flex items-center gap-2">
         {isGamePage && <Button title={t('nav.resign')} onClick={resignGame} />}
         <SettingsButton />
       </div>
-      <NavPopup
-        isOpen={isStartGameOpen}
-        onOpenChange={setIsStartGameOpen}
-        isGamePage={isGamePage}
-      />
     </nav>
   );
 }

@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { TiThMenu } from 'react-icons/ti';
 import HeaderIcon from '@/components/HeaderIcon';
+import { useStartGame } from '@/components/startGame/StartGameContext';
 import { DropdownButton } from '@/components/ui/DropdownButton';
 import type { IDropdownButtonItem } from '@/components/ui/Interfaces';
 
@@ -24,15 +25,10 @@ const menuItemIds: Record<string, string> = {
 
 const MenuIcon = HeaderIcon(TiThMenu);
 
-interface IMenuButtonProps {
-  onStartGameSelect: () => void;
-}
-
-export default function MenuButton({
-  onStartGameSelect,
-}: IMenuButtonProps): JSX.Element {
+export default function MenuButton(): JSX.Element {
   const t = useTranslations();
   const router = useRouter();
+  const { open: openStartGamePopup } = useStartGame();
 
   const items: IDropdownButtonItem<string>[] = useMemo(
     (): IDropdownButtonItem<string>[] => [
@@ -46,7 +42,7 @@ export default function MenuButton({
   const menuItemClick = (itemId: string): void => {
     switch (itemId) {
       case menuItemIds.startGame:
-        onStartGameSelect();
+        openStartGamePopup();
         break;
       case menuItemIds.history:
         router.push(ROUTES.history);

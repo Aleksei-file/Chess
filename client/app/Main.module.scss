@@ -1,0 +1,20 @@
+.Welcome {
+  display: inline-block;
+  width: min(90vw, 32rem);
+  aspect-ratio: 1916 / 821;
+  background-color: var(--text-contrast);
+  -webkit-mask-image: url('../assets/images/welcome.png');
+  mask-image: url('../assets/images/welcome.png');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transition: background-color 0.2s ease;
+}
+
+.StartButton {
+  font-size: 1.125rem;
+  padding: 0.75rem 2rem;
+}

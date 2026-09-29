@@ -1,15 +1,25 @@
 {
   "main": {
-    "welcome": "Welcome to the Chess App!"
+    "taglines": [
+      "Play. Improve. Enjoy.",
+      "A calmer way to play chess.",
+      "Your board. Your pace. Your game.",
+      "Relax, it's just chess.",
+      "Sharpen your mind, one move at a time.",
+      "A worthy opponent, whenever you're ready."
+    ],
+    "start_game": "Start game"
   },
   "nav": {
     "label": "Basic navigation",
     "logo": "Chess",
     "stop": "Stop",
-    "stop_game": "Stop game",
-    "start": "Start",
-    "start_game": "Start game",
     "resign": "Resign"
+  },
+  "startGame": {
+    "start_game": "Start game",
+    "stop_game": "Stop game",
+    "start": "Start"
   },
   "menu": {
     "start": "Start game",

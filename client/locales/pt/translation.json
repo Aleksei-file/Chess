@@ -1,15 +1,25 @@
 {
   "main": {
-    "welcome": "Bem-vindo ao aplicativo de Chess App!"
+    "taglines": [
+      "Jogue. Evolua. Aproveite.",
+      "Uma forma mais tranquila de jogar xadrez.",
+      "Seu tabuleiro. Seu ritmo. Seu jogo.",
+      "Relaxe, é só xadrez.",
+      "Afie sua mente, lance a lance.",
+      "Um adversário à altura, sempre que você quiser jogar."
+    ],
+    "start_game": "Iniciar jogo"
   },
   "nav": {
     "label": "Navegação básica",
     "logo": "Xadrez",
     "stop": "Parar",
-    "stop_game": "Parar jogo",
-    "start": "Iniciar",
-    "start_game": "Iniciar jogo",
     "resign": "Desistir"
+  },
+  "startGame": {
+    "start_game": "Iniciar jogo",
+    "stop_game": "Parar jogo",
+    "start": "Iniciar"
   },
   "menu": {
     "start": "Iniciar jogo",

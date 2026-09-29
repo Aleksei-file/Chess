@@ -24,7 +24,9 @@ function ScrollArea({
       <BaseScrollArea.Viewport
         className={`${styles.Viewport} ${viewportClassName || ''}`.trim()}
       >
-        <BaseScrollArea.Content>{children}</BaseScrollArea.Content>
+        <BaseScrollArea.Content className={styles.Content}>
+          {children}
+        </BaseScrollArea.Content>
       </BaseScrollArea.Viewport>
       <BaseScrollArea.Scrollbar
         orientation="vertical"
