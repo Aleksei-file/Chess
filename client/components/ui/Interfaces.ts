@@ -5,6 +5,8 @@ import type {
 import type { IPopupProps } from '@/components/ui/Popup';
 import type { IButtonProps } from '@/components/ui/Button';
 import type { IBoardProps } from '@/components/ui/Board';
+import type { IScrollAreaProps } from '@/components/ui/ScrollArea';
+import type { ITaglineCarousel } from '@/components/ui/TaglineCarousel';
 
 export type {
   IDropdownButtonItem,
@@ -12,4 +14,6 @@ export type {
   IPopupProps,
   IButtonProps,
   IBoardProps,
+  IScrollAreaProps,
+  ITaglineCarousel,
 };

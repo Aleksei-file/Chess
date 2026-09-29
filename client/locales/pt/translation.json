@@ -1,15 +1,25 @@
 {
   "main": {
-    "welcome": "Bem-vindo ao aplicativo de Chess App!"
+    "taglines": [
+      "Jogue. Evolua. Aproveite.",
+      "Uma forma mais tranquila de jogar xadrez.",
+      "Seu tabuleiro. Seu ritmo. Seu jogo.",
+      "Relaxe, é só xadrez.",
+      "Afie sua mente, lance a lance.",
+      "Um adversário à altura, sempre que você quiser jogar."
+    ],
+    "start_game": "Iniciar jogo"
   },
   "nav": {
     "label": "Navegação básica",
     "logo": "Xadrez",
     "stop": "Parar",
-    "stop_game": "Parar jogo",
-    "start": "Iniciar",
-    "start_game": "Iniciar jogo",
     "resign": "Desistir"
+  },
+  "startGame": {
+    "start_game": "Iniciar jogo",
+    "stop_game": "Parar jogo",
+    "start": "Iniciar"
   },
   "menu": {
     "start": "Iniciar jogo",
@@ -22,7 +32,22 @@
     "profile": "Perfil"
   },
   "about": {
-    "title": "Sobre o aplicativo"
+    "title": "Sobre o aplicativo",
+    "intro": "Este é um aplicativo de xadrez para jogar contra um adversário controlado por computador. Aqui você pode iniciar uma nova partida, salvar seu progresso, ver o histórico de partidas jogadas e voltar a uma partida não concluída a qualquer momento.",
+    "opponent": {
+      "title": "O adversário",
+      "text": "O adversário é um jogador de computador baseado em inteligência artificial. Ele analisa a posição, calcula variantes e escolhe um lance, buscando oferecer uma partida interessante para jogadores de qualquer nível."
+    },
+    "stockfish": {
+      "title": "Sobre o Stockfish",
+      "text": "O motor do jogo é baseado no Stockfish, um dos motores de xadrez mais fortes do mundo. Ele usa busca profunda de variantes e avaliação precisa da posição, o que permite jogar em um nível muito alto e ao mesmo tempo se ajustar à dificuldade escolhida."
+    },
+    "story": {
+      "title": "Do autor",
+      "text1": "Criei este projeto como uma demonstração das minhas habilidades técnicas durante a busca por trabalho. Eu queria mostrar como resolvo o desafio técnico de integrar um motor de xadrez e gerenciar os dados das partidas, com foco na parte de interface.",
+      "text2": "O projeto também tem um motivo pessoal. Fui inspirado pela paixão do meu filho Artem pelo xadrez. Ao ver o interesse com que ele analisa partidas e pensa nos lances, quis criar um aplicativo que ele mesmo gostaria de jogar."
+    },
+    "signature": "Aleksei"
   },
   "game": {
     "thinking": "Adversário está pensando…",

@@ -9,3 +9,9 @@
 .Button:hover {
   background: var(--text-contrast-hover);
 }
+
+.Button[data-disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}

@@ -1,15 +1,25 @@
 {
   "main": {
-    "welcome": "Welcome to the Chess App!"
+    "taglines": [
+      "Play. Improve. Enjoy.",
+      "A calmer way to play chess.",
+      "Your board. Your pace. Your game.",
+      "Relax, it's just chess.",
+      "Sharpen your mind, one move at a time.",
+      "A worthy opponent, whenever you're ready."
+    ],
+    "start_game": "Start game"
   },
   "nav": {
     "label": "Basic navigation",
     "logo": "Chess",
     "stop": "Stop",
-    "stop_game": "Stop game",
-    "start": "Start",
-    "start_game": "Start game",
     "resign": "Resign"
+  },
+  "startGame": {
+    "start_game": "Start game",
+    "stop_game": "Stop game",
+    "start": "Start"
   },
   "menu": {
     "start": "Start game",
@@ -22,7 +32,22 @@
     "profile": "Profile"
   },
   "about": {
-    "title": "About app"
+    "title": "About app",
+    "intro": "This is a chess application for playing against a computer opponent. You can start a new game, save your progress, review the history of games played, and return to an unfinished game at any time.",
+    "opponent": {
+      "title": "The Opponent",
+      "text": "The opponent is a computer player driven by artificial intelligence. It analyzes the position, calculates variations, and chooses a move, aiming to offer a meaningful game to players of any level."
+    },
+    "stockfish": {
+      "title": "About Stockfish",
+      "text": "The game engine is built on Stockfish, one of the strongest chess engines in the world. It relies on deep variation search and precise position evaluation, which allows it to play at a very high level while adapting to the selected difficulty."
+    },
+    "story": {
+      "title": "From the Author",
+      "text1": "I built this project as a demonstration of my technical skills while looking for work. I wanted to show how I solve the technical challenge of integrating a chess engine and managing game data, with a focus on the interface.",
+      "text2": "There is also a personal reason behind the project. I was inspired by my son Artem's passion for chess. Watching how eagerly he studies games and thinks through his moves made me want to build an application that he would enjoy playing himself."
+    },
+    "signature": "Aleksei"
   },
   "game": {
     "thinking": "Opponent is thinking…",

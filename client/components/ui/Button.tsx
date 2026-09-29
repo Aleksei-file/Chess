@@ -10,6 +10,7 @@ import styles from './Button.module.scss';
 interface IButtonProps {
   title: ReactNode;
   className?: string;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
@@ -18,6 +19,7 @@ function Button(props: IButtonProps): JSX.Element {
     <ReactButton
       className={`${styles.Button} ${props.className || ''}`.trim()}
       onClick={props.onClick}
+      disabled={props.disabled}
     >
       {props.title}
     </ReactButton>
