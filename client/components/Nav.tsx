@@ -35,7 +35,7 @@ export default function Nav(): JSX.Element {
   return (
     <nav
       aria-label={t('nav.label')}
-      className="flex justify-between items-center"
+      className="relative flex justify-between items-center"
     >
       <div className="flex items-center gap-2">
         <MenuButton onStartGameSelect={openStartGamePopup} />
@@ -45,7 +45,10 @@ export default function Nav(): JSX.Element {
           <Button title={t('nav.start_game')} onClick={openStartGamePopup} />
         )}
       </div>
-      <a href="/">
+      <a
+        href="/"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+      >
         <span role="img" aria-label={t('nav.logo')} className={styles.Logo} />
       </a>
       <div className="flex items-center gap-2">

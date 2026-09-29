@@ -1,0 +1,48 @@
+.Root {
+  position: relative;
+  overflow: hidden;
+}
+
+.Viewport {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.Viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.Scrollbar {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0.5rem;
+  padding: 0.25rem 0.125rem;
+  opacity: 0;
+  touch-action: none;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.Scrollbar[data-hovering],
+.Scrollbar[data-scrolling] {
+  opacity: 1;
+}
+
+.Thumb {
+  flex: 1;
+  border-radius: 9999px;
+  background: var(--text-secondary);
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.Thumb:hover {
+  opacity: 0.9;
+}

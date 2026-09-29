@@ -1,0 +1,56 @@
+.Page {
+  width: 100%;
+  max-width: 42rem;
+  padding: 0 1rem;
+}
+
+.Title {
+  margin: 0 0 1.5rem;
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.Intro {
+  margin: 0 0 2rem;
+  color: var(--text-primary);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.Section {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 0.75rem;
+  background: var(--panel-background);
+}
+
+.Section + .Section {
+  margin-top: 1.25rem;
+}
+
+.SectionTitle {
+  margin: 0 0 0.5rem;
+  color: var(--text-contrast);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.SectionText {
+  margin: 0;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.SectionText + .SectionText {
+  margin-top: 0.75rem;
+}
+
+.Signature {
+  margin: 1rem 0 0;
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: right;
+}

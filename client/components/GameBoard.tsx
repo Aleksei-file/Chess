@@ -19,7 +19,8 @@ import {
 import { Chess, type Square } from 'chess.js';
 import { useStockfish } from '@/hooks/useStockfish';
 
-/** Color the human player controls; the engine plays the opposite side. */
+// always promote to a queen for simplicity
+const PROMOTION = 'q';
 const PLAYER_COLOR = 'w';
 const CLICKED_SQUARE_BACKGROUND = 'rgba(255, 255, 0, 0.4)';
 const MOVE_TO_BACKGROUNDS = {
@@ -192,7 +193,7 @@ export default function GameBoard(): JSX.Element {
       chessGame.move({
         from: moveFrom,
         to: square,
-        promotion: 'q',
+        promotion: PROMOTION,
       });
     } catch {
       // if invalid, setMoveFrom and getMoveOptions
@@ -232,7 +233,7 @@ export default function GameBoard(): JSX.Element {
       chessGame.move({
         from: sourceSquare,
         to: targetSquare,
-        promotion: 'q', // always promote to a queen for simplicity
+        promotion: PROMOTION,
       });
 
       // update the position state upon successful move to trigger a re-render of the chessboard
